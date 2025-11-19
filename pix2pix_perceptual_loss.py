@@ -56,7 +56,7 @@ class Pix2PixModel(BaseModel):
             parser.set_defaults(pool_size=0, gan_mode='vanilla')
             parser.add_argument('--lambda_L1', type=float, default=100.0, help='weight for L1 loss')
 	    parser.add_argument('--lambda_perc', type=float, default=1.0,
-            	help='weight for perceptual loss')
+            help='weight for perceptual loss')
 
 
         return parser
