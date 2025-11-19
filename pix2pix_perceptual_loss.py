@@ -19,8 +19,8 @@ class PerceptualLoss(nn.Module):
 
     def forward(self, x, y):
         loss = 0.0
-        x = torch.repeat(x, 3, axis=1)
-        y = torch.repeat(y, 3, axis=1)
+        x = x.repeat(1,3)
+        y = y.repeat(1,3)
         for slice in self.slices:
             fx = slice(x)
             fy = slice(y)
