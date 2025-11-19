@@ -56,7 +56,7 @@ class Pix2PixModel(BaseModel):
             parser.set_defaults(pool_size=0, gan_mode='vanilla')
             parser.add_argument('--lambda_L1', type=float, default=100.0, help='weight for L1 loss')
             parser.add_argument('--lambda_perc', type=float, default=1.0, 
-                                 help='weight for perceptual loss')
+							help='weight for perceptual loss')
 
 
         return parser
@@ -130,20 +130,19 @@ class Pix2PixModel(BaseModel):
         self.loss_D.backward()
 
     def backward_G(self):
-        fake_AB = torch.cat((self.real_A, self.fake_B), 1)
-        pred_fake = self.netD(fake_AB)
-        self.loss_G_GAN = self.criterionGAN(pred_fake, True)
+      fake_AB = torch.cat((self.real_A, self.fake_B), 1)
+      pred_fake = self.netD(fake_AB)
+      self.loss_G_GAN = self.criterionGAN(pred_fake, True)
 
-        # L1 loss
-        self.loss_G_L1 = self.criterionL1(self.fake_B, self.real_B) * self.opt.lambda_L1
+    	# L1 loss
+      self.loss_G_L1 = self.criterionL1(self.fake_B, self.real_B) * self.opt.lambda_L1
 
-        # Perceptual loss
-        self.loss_G_Perc = self.criterionPerc(self.fake_B, self.real_B) * 1.0   # weight can be tuned
+    	# Perceptual loss
+      self.loss_G_Perc = self.criterionPerc(self.fake_B, self.real_B) * self.opt.lambda_perc
 
-        # total
-       self.loss_G = self.loss_G_GAN + self.loss_G_L1 + self.loss_G_Perc
-       self.loss_G.backward()
-
+    	# total
+      self.loss_G = self.loss_G_GAN + self.loss_G_L1 + self.loss_G_Perc
+      self.loss_G.backward()
 
 
     def optimize_parameters(self):
