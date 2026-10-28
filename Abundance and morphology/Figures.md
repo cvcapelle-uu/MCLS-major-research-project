@@ -2,9 +2,13 @@
 
 Quantitative comparisons of lysosomal abundance and morphology across
 control, PhTau-negative and PhTau-positive cells.
+
 (A) Number of lysosomes per μm2 per cell.
+
 (B) Percentage of cell area covered by lysosomes.
+
 (C) Mean lysosome size per cell in μm2.
+
 (D) Mean lysosome intensity per cell.
 
 
@@ -13,7 +17,11 @@ control, PhTau-negative and PhTau-positive cells.
 
 Quantitative comparisons of lysosomal abundance and morphology across
 phenotype annotations.
+
 (A) Number of lysosomes per μm2 per cell.
+
 (B) Percentage of cell area covered by lysosomes.
+
 (C) Mean lysosome size per cell in μm2.
+
 (D) Mean lysosome intensity per cell.
