@@ -1,4 +1,5 @@
 <img width="373" height="317" alt="image" src="https://github.com/user-attachments/assets/d9116ed8-235d-405f-a173-af159d669dcf" />
+
 Representative Pix2Pix predictions for bidirectional marker translation. Rows
 A and B show dox+ samples and row C shows a dox- control sample. The first two
 columns display the ground-truth lysosome and PhTau channels. The third column shows
